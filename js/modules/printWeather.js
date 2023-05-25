@@ -42,8 +42,7 @@ const printWeather = async () => {
   const [weekday, dayAndMonth, year] = new Date()
     .toLocaleDateString("en-US", options)
     .split(",");
-  const [day, month] = dayAndMonth.split(" ");
-
+  const [month, day] = dayAndMonth.trim().split(" ");
   const { data, city } = await getWeather();
   const {
     current_weather: { temperature },
