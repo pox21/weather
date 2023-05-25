@@ -13,8 +13,7 @@ const getWeather = async () => {
     `${WEATHER_URL}?latitude=${latitude}&longitude=${longitude}&current_weather=true`
   );
   const data = await response.json();
-  console.log(data, city);
-  return { latitude: data.latitude, longitude: data.longitude };
+  return { data, city };
 }
 
 export { getWeather };
